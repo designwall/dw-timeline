@@ -62,7 +62,8 @@ if (typeof $('.timeline-scrubber').offset() !== 'undefined') {
 $('.timeline-scrubber ul li').on('click', function(event) {
     event.preventDefault();
     var timelineInfinitescroll = $('.timeline').data('infinitescroll');
-    var pageNum = $(this).data('page');
+    var t = $(this);
+    var pageNum = t.data('page');
     if (!infiniteAutoScroll && !scrolling) {
         moveByScrubber = true;
         timelineInfinitescroll._binding('unbind');
@@ -100,11 +101,11 @@ $('.timeline-scrubber ul li').on('click', function(event) {
                 scrollTop: scrollPoint
             },
             1000, function() {
+                timelineInfinitescroll._binding('bind');
                 scrolling = false;
+                $('.timeline-scrubber ul li').removeClass('active');
+                t.addClass('active');
             });
-        timelineInfinitescroll._binding('bind');
-        $('.timeline-scrubber ul li').removeClass('active');
-        $(this).addClass('active');
     }
 });
 
@@ -184,7 +185,6 @@ timeline.infinitescroll({
 // Window scroll 
 //------------------------
 $(window).on('scroll', function() {
-    console.log(moveByScrubber);
     if (!moveByScrubber) {
         $('.timeline .post').each(function() {
             var t = $(this);
