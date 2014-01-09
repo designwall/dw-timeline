@@ -4,10 +4,10 @@
  *
  * @link http://getbootstrap.com/components/#media
  */
-class dw_timeline_Walker_Comment extends Walker_Comment {
+class DW_Timeline_Walker_Comment extends Walker_Comment {
   function start_lvl(&$output, $depth = 0, $args = array()) {
     $GLOBALS['comment_depth'] = $depth + 1; ?>
-    <ul <?php comment_class('media list-unstyled comment-' . get_comment_ID()); ?>>
+    <ul class="children">
     <?php
   }
 
@@ -28,7 +28,7 @@ class dw_timeline_Walker_Comment extends Walker_Comment {
 
     extract($args, EXTR_SKIP); ?>
 
-  <li id="comment-<?php comment_ID(); ?>" <?php comment_class('media comment-' . get_comment_ID()); ?>>
+  <li id="comment-<?php comment_ID(); ?>" <?php comment_class('comment-' . get_comment_ID()); ?>>
     <?php include(locate_template('templates/comment.php')); ?>
   <?php
   }

@@ -10,6 +10,6 @@
     <footer>
       <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'dw-timeline'), 'after' => '</p></nav>')); ?>
     </footer>
-    <?php comments_template('/templates/comments.php'); ?>
   </article>
+  <?php comments_template('/templates/comments.php'); ?>
 <?php endwhile; ?>

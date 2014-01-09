@@ -7,8 +7,8 @@
   <section id="comments">
     <h3><?php printf(_n('One Response to &ldquo;%2$s&rdquo;', '%1$s Responses to &ldquo;%2$s&rdquo;', get_comments_number(), 'dw-timeline'), number_format_i18n(get_comments_number()), get_the_title()); ?></h3>
 
-    <ol class="media-list">
-      <?php wp_list_comments(array('walker' => new dw_timeline_Walker_Comment)); ?>
+    <ol class="comment-list">
+      <?php wp_list_comments(array('walker' => new DW_Timeline_Walker_Comment)); ?>
     </ol>
 
     <?php if (get_comment_pages_count() > 1 && get_option('page_comments')) : ?>
@@ -41,28 +41,28 @@
 <?php endif; ?>
 <?php
   $comments_args = array(
+    'logged_in_as' => '',
+    'comment_notes_before' => '',
     'comment_notes_after' => '',
     'fields' => apply_filters( 'comment_form_default_fields', array(
       'author' =>
         '<div class="form-group">' .
         '<label for="author">' . __( 'Name', 'dw-timeline' ) . '</label> ' .
-        ( $req ? '<span class="required">*</span>' : '' ) .
-        '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
+        '<input placeholder="' . _x( 'Name', 'dw-timeline' ) . '" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
         '" class="form-control"' . $aria_req . ' /></div>',
 
       'email' =>
         '<div class="form-group"><label for="email">' . __( 'Email', 'dw-timeline' ) . '</label> ' .
-        ( $req ? '<span class="required">*</span>' : '' ) .
-        '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+        '<input placeholder="' . _x( 'Email', 'dw-timeline' ) . '" id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
         '" class="form-control"' . $aria_req . ' /></div>',
 
       'url' =>
         '<div class="form-group"><label for="url">' .
         __( 'Website', 'dw-timeline' ) . '</label>' .
-        '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
+        '<input placeholder="' . _x( 'Website', 'dw-timeline' ) . '" id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
         '" class="form-control" /></div>'
       )
     ),
-    'comment_field' => '<div class="form-group"><label for="comment">' . _x( 'Comment', 'noun' ) . '</label><textarea name="comment" id="comment" class="form-control" rows="5" aria-required="true"></textarea></div>',
+    'comment_field' => '<div class="form-group"><label for="comment">' . __( 'Comment', 'dw-timeline' ) . '</label><textarea placeholder="' . __( 'Write your comment', 'dw-timeline' ) . '" name="comment" id="comment" class="form-control" rows="5" aria-required="true"></textarea></div>',
   );
   comment_form($comments_args); ?>

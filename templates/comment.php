@@ -1,4 +1,4 @@
-<?php echo get_avatar($comment, $size = '64'); ?>
+<?php echo get_avatar($comment, $size = '48'); ?>
 <div class="comment-body">
   <div class="comment-header">
     <h4 class="comment-heading"><?php echo get_comment_author_link(); ?></h4>
@@ -15,6 +15,5 @@
   </div>
 
   <div class="comment-action">
-    <?php edit_comment_link(__('<i class="glyphicon glyphicon-pencil"></i> Edit', 'dw-timeline'), '', ''); ?>
-    <?php comment_reply_link(array_merge(array('reply_text'=> __('<i class="glyphicon glyphicon-share-alt"></i> Reply this comment', 'dw-timeline') ), array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
+    <?php comment_reply_link(array_merge(array('reply_text'=> __('<i class="glyphicon glyphicon-share-alt"></i> Reply', 'dw-timeline') ), array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
   </div>
