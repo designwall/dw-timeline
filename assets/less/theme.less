@@ -1,0 +1,166 @@
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+body {
+   background: #f8f8f8;
+}
+
+a {
+   outline: none !important;
+}
+
+a:hover {
+   text-decoration: none;
+}
+
+figure {
+   max-width: 100%;
+}
+
+img {
+   max-width: 100%;
+   height: auto;
+}
+
+blockquote {
+   background: @brand-danger;
+   border: none;
+   padding: 30px;
+   margin: 0 0 10px;
+   color: #fff;
+   font-family: @headings-font-family;
+   border-radius: @border-radius-small;
+
+   p {
+      line-height: @line-height-base;
+      font-weight: 500;
+   }
+
+   a {
+      color: #fff;
+
+      &:hover {
+         color: #fff;
+      }
+   }
+
+   cite {
+      font-family: @font-family-base;
+      font-size: @font-size-base;
+      font-weight: normal;
+      display: block;
+
+      &:before {
+         content: "—";
+         margin-right: 10px;
+      }
+   }
+}
+
+
+/* ==========================================================================
+   WordPress Generated Classes
+   See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes
+   ========================================================================== */
+
+.aligncenter { display: block; margin: 0 auto; }
+.alignleft { float: left; }
+.alignright { float: right; }
+figure.alignnone { margin-left: 0; margin-right: 0; }
+
+
+/* ==========================================================================
+   Button
+   ========================================================================== */
+.btn {
+   outline: none !important;
+   font-size: 10px;
+   text-transform: uppercase;
+}
+
+.btn-link {
+   &:hover,
+   &:focus {
+      text-decoration: none;
+   }
+}
+
+.btn-coner {
+   border-radius: 30px;
+}
+
+
+/* ==========================================================================
+   carousel
+   ========================================================================== */
+.carousel-control {
+   .opacity(0);
+   .square(40px);
+   .transition( all .5s );
+   top: 50%;
+   margin: -20px 50px 0;
+   border-radius: 50%;
+   background: #000;
+   background-image: none !important;
+   line-height: 40px;
+
+   .icon-next,
+   .icon-prev {
+      .square(auto);
+      position: static;
+      margin: 0;
+      font-size: 18px;
+      font-family: 'Glyphicons Halflings';
+   }
+
+   .icon-next {
+      &:before {
+         content: '\e080';
+      }
+   }
+
+   .icon-prev {
+      &:before {
+         content: '\e079';
+      }
+   }
+
+   .carousel:hover & {
+      .opacity(.5);
+      margin: -20px 15px 0;
+
+      &:hover {
+         .opacity(.9);
+      }
+   }
+}
+
+@media screen and (min-width: 768px) {
+   .carousel-indicators {
+      bottom: 10px;
+   }
+}
+
+.carousel-indicators {
+   .text-overflow();
+
+   li {
+      .transition( all .5s );
+      margin: 1px 2px !important;
+   }
+
+   .active {
+      .square(10px);
+   }
+}
+
+.carousel-comments-link,
+.carousel-comments-link + p {
+   display: none;
+}
+
+.carousel-post-title {
+   .text-overflow();
+   margin-bottom: 0;
+}

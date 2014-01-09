@@ -1,0 +1,245 @@
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+.main {
+   margin-top: 60px;
+   margin-bottom: 60px; 
+}
+
+.home .main {
+   margin-top: 0;
+   margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+.banner {
+   background: url(../img/bg.jpg) no-repeat top center fixed;
+   background-size: cover;
+   color: #fff;
+   position: relative;
+   text-align: center;
+
+   &:before {
+      content: "";
+      display: block;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      position: absolute;
+      #gradient > .directional(@start-color: #a83279; @end-color: #d38312; @deg: -45deg);
+      .opacity(.8);
+   }
+
+   .container {
+      min-height: 660px;
+      position: relative;
+   }
+
+   hgroup {
+      position: relative;
+
+      &:after {
+         content: "";
+         display: block;
+         background: #f2664f;
+         width: 280px;
+         height: 280px;
+         position: absolute;
+         top: 180px;
+         left: 50%;
+         margin-left: -140px;
+         z-index: 0;
+         .rotate(45deg);
+         .opacity(.5);
+      }
+   }
+
+   .page-title {
+      position: relative;
+      font-family: @headings-font-family;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-top: 230px;
+      padding: 13px 20px 15px;
+      font-size: 60px;
+      line-height: 60px;
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,.25);
+      z-index: 1;
+
+      a {
+         color: #fff;
+         text-decoration: none;
+      }
+   }
+
+   .page-description {
+      font-family: @headings-font-family;
+      font-size: 18px;
+      text-transform: uppercase;
+      font-weight: 100;
+      margin: 0;
+      z-index: 1;
+      position: relative;
+      .opacity(.5);
+   } 
+
+   #get-started {
+      position: relative;
+      z-index: 1;
+      display: block;
+      overflow: hidden;
+      margin: 20px auto 0;
+      padding-right: 30px;
+      padding-left: 30px;
+      outline: none !important;
+      border: none;
+      border: 2px solid transparent;
+      background: #fff;
+      color: #f2664f;
+      .box-shadow(none) !important;
+      .transition( .3s );
+
+      &:hover {
+         background: transparent;
+         border-color: #fff;
+         color: transparent;
+      }
+
+      &:before {
+         content: '\e094';
+         font-family: 'Glyphicons Halflings';
+         position: absolute;
+         left: 0;
+         top: -100%;
+         color: #fff;
+         .square(100%);
+         .transition( .3s );
+      }
+
+      &:hover:before {
+         top: 5px;
+      }
+   }
+
+   .nav-main {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      z-index: 1;
+
+      .navbar-nav {
+         display: inline-block;
+         float: none;
+         padding: 0;
+         width: 100%;
+         border-top: 1px solid #fff;
+         border-top: 1px solid rgba(255,255,255,.15);
+
+         > li {
+            display: inline-block;
+            float: none;
+            background: transparent;
+         }
+      }
+
+      a {
+         color: #fff;
+         color: rgba(255,255,255,.5);
+      }
+
+      a:hover,
+      a:active {
+         background: none;
+         color: #fff;
+      }
+
+      .open {
+         > a,
+         a:hover,
+         a:focus {
+            background: none;
+            color: #fff;
+         }
+      }
+
+      .active {
+         margin-top: -1px;
+         border-top: 1px solid #fff;
+
+         a {
+            color: #fff;
+         }
+      }
+
+      .dropdown-menu {
+         border: none !important;
+         background: rgba(255, 255, 255, 0.1);
+         box-shadow: none;
+         text-align: left;
+
+         a {
+            padding: 5px 15px;
+         }
+      }
+   }
+}
+
+
+
+/* ==========================================================================
+   Content
+   ========================================================================== */
+
+
+/* ==========================================================================
+   Primary Content
+   ========================================================================== */
+
+
+/* ==========================================================================
+   Sidebar
+   ========================================================================== */
+
+.sidebar {
+   .widget {
+      background: #fff;
+      .box-shadow(0 1px 1px 0 rgba(0,0,0,.15));
+      padding: 30px;
+      margin-top: 30px;
+
+      &:first-child {
+         margin-top: 0;
+      }
+   }
+
+   .widget-inner > h3 {
+      margin: 0 0 15px;
+      font-family: @font-family-base;
+      font-size: 11px;
+      text-transform: uppercase;
+   }
+
+   .widget-inner ul,
+   .widget-inner ol {
+      margin: 0;
+      padding: 0 0 0 15px;
+   }
+}
+
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.content-info {
+   background: #fff;
+   border-top: 1px solid @gray-lighter;
+   text-align: center;
+   font-size: @font-size-small;
+   padding: 60px 0;
+}

@@ -1,0 +1,185 @@
+/* ==========================================================================
+   Posts
+   ========================================================================== */
+.hentry {
+   .entry-thumbnail {
+      margin: 0 0 15px;
+   }
+
+   .entry-inner {
+      padding: 30px 30px 0;
+      margin: 0 15px 30px;
+      background: #fff;
+      border-radius: @border-radius-small;
+      .box-shadow(0 1px 1px 0 rgba(0,0,0,.15));
+   }
+
+   .entry-format {
+      font-size: @font-size-small;
+      color: #bbb;
+      margin: 0 0 10px;
+      text-transform: uppercase;
+   }
+
+   .entry-title {
+      margin: 0 0 15px;
+   }
+
+   .entry-meta {
+      font-size: @font-size-small;
+      color: #bbb;
+      margin: 0 0 15px;
+
+      a {
+         color: #bbb;
+      }
+
+      .sep {
+         margin: 0 5px;
+      }
+   }
+
+   .entry-content,
+   .entry-summary {
+      padding: 0 0 20px;
+
+      .carousel {
+         margin: 0 0 10px;
+      }
+   }
+
+   .more-link {
+      display: block;
+      clear: both;
+      margin: 10px 0 0;
+   }
+}
+
+
+/* ==========================================================================
+   Single
+   ========================================================================== */
+.single {
+   .banner .nav-main {
+      top: 0;
+
+      ul {
+         border-top: none;
+         border-bottom: 1px solid #fff;
+         border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      }
+
+      .active {
+         margin-top: 0;
+         margin-bottom: -1px;
+         border-top: none;
+         border-bottom: 1px solid #fff;
+      }
+   }
+
+   .hentry header {
+      position: absolute;
+      top: -160px;
+      z-index: 1;
+      color: #fff;
+      width: 100%;
+   }
+
+   .entry-title {
+      font-weight: 700;
+      font-size: 48px;
+      position: absolute;
+      bottom: 0;
+      padding-bottom: 50px;
+   }
+
+   .entry-meta {
+      color: #fff;
+
+      a {
+         color: #fff;
+      }
+
+      .avatar {
+         border-radius: 50%;
+         margin-right: 5px;
+      }
+   }
+
+   .entry-content {
+      font-family: @headings-font-family;
+      font-weight: 300;
+      font-size: @font-size-content;
+      line-height: @line-height-content; 
+   }
+}
+
+
+/* ==========================================================================
+   Comments List
+   ========================================================================== */
+
+#comments {
+   margin: 0 -30px;
+   padding: 30px;
+   border-top: 1px solid #ddd;
+
+   > h3 {
+      margin: 0 0 15px;
+      font-family: @font-family-base;
+      font-size: 11px;
+      text-transform: uppercase;
+   }
+
+   ol {
+      margin: 0;
+   }
+
+   .comment {
+      margin: 30px 0 0;
+
+      p:last-child {
+         margin: 0;
+      }
+
+      .avatar {
+         width: 48px;
+         height: auto;
+         margin: 0 20px 0 0;
+      }
+
+      .comment-header {
+         float: left;
+
+         h4 {
+            font-family: @font-family-base;
+            font-size: @font-size-base;
+            display: inline-block;
+            font-weight: normal;
+            margin: 0 0 10px;
+         }
+      }
+
+      .comment-action {
+         float: right;
+      }
+
+      .comment-content {
+         clear: both;
+      }
+   }
+}
+
+
+/* ==========================================================================
+   Comment Form
+   ========================================================================== */
+
+#respond {
+   border-top: 1px solid #ddd;
+   padding: 10px 0 0;
+
+   > h3 {
+      display: none;
+   }
+}
