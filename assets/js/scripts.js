@@ -69,43 +69,47 @@ $('.timeline-scrubber ul li').on('click', function(event) {
         timelineInfinitescroll._binding('unbind');
         timelineInfinitescroll.options.state.currPage = parseInt(pageNum) - 1;
         var scrollPoint = 0;
-        if (loadedPage.indexOf(pageNum) > -1 && timeline.find('.timeline-time[data-page="' + pageNum + '"]').length > 0) {
+
+        if (loadedPage.indexOf(pageNum) > -1 && timeline.find('.timeline-pale[data-page="' + pageNum + '"]').length > 0) {
             //Loaded
-            scrollPoint = timeline.find('.timeline-time[data-page="' + pageNum + '"]').offset().top;
+            scrollPoint = timeline.find('.timeline-pale[data-page="' + pageNum + '"]').offset().top;
+            scrolling = true;
+            if ($('body').hasClass('admin-bar')) {
+                scrollPoint -= 32;
+            }
+
+            $('html, body').animate({
+                    scrollTop: scrollPoint
+                },
+                1000, function() {
+                    timelineInfinitescroll._binding('bind');
+                    scrolling = false;
+                    $('.timeline-scrubber ul li').removeClass('active');
+                    t.addClass('active');
+                });
         } else {
             var currPage = timelineInfinitescroll.options.state.currPage;
 
-            while (currPage > 1) {
-                if (loadedPage.indexOf(currPage) > -1) {
-                    break;
-                }
-                currPage--;
-            }
-            var lastPost = timeline.find('article[data-page="' + currPage + '"]:last');
-            scrollPoint = lastPost.offset().top + lastPost.outerHeight();
-            var prevLastPost = lastPost.prev();
-            var prevLastPostPos = prevLastPost.offset().top + prevLastPost.outerHeight();
-            if (prevLastPostPos > scrollPoint) {
-                scrollPoint = prevLastPostPos;
-            }
-            if (timelineInfinitescroll.options.state.isDone) {
+            // while (currPage > 1) {
+            //     if (loadedPage.indexOf(currPage) > -1) {
+            //         break;
+            //     }
+            //     currPage--;
+            // }
+            // var lastPost = timeline.find('article[data-page="' + currPage + '"]:last');
+            // scrollPoint = lastPost.offset().top + lastPost.outerHeight();
+
+            // var prevLastPost = lastPost.prev();
+            // var prevLastPostPos = prevLastPost.offset().top + prevLastPost.outerHeight();
+            // if (prevLastPostPos > scrollPoint) {
+            //     scrollPoint = prevLastPostPos;
+            // }
+            if (timelineInfinitescroll.options.state.isDone && loadedPage.length < $('.timeline-scrubber ul li').length) {
                 timelineInfinitescroll.options.state.isDone = false;
             }
             timelineInfinitescroll.retrieve();
         }
-        scrolling = true;
-        if ($('body').hasClass('admin-bar')) {
-            scrollPoint -= 32;
-        }
-        $('html, body').animate({
-                scrollTop: scrollPoint
-            },
-            1000, function() {
-                timelineInfinitescroll._binding('bind');
-                scrolling = false;
-                $('.timeline-scrubber ul li').removeClass('active');
-                t.addClass('active');
-            });
+
     }
 });
 
@@ -120,7 +124,6 @@ timeline.infinitescroll({
             if (!opts.state.isBeyondMaxPage) {
                 opts.loading.msg.fadeOut(opts.loading.speed);
             }
-            moveByScrubber = false;
             infiniteAutoScroll = false;
         },
         finishedMsg: "The End",
@@ -162,6 +165,7 @@ timeline.infinitescroll({
         $t._debug('contentSelector', $(opts.contentSelector)[0]);
         var max = Math.max.apply(null, loadedPage);
         var separate = $('<div data-page="' + opts.state.currPage + '" class="timeline-pale dwtl full"><span> Page ' + opts.state.currPage + ' </span></div>');
+        var pageNum = opts.state.currPage;
         if (opts.state.currPage >= max) {
             $(opts.contentSelector).append(separate);
             $(opts.contentSelector).append(elems);
@@ -179,6 +183,25 @@ timeline.infinitescroll({
         }
         dwtl_layout();
         elems.fadeIn('slow');
+
+        if (moveByScrubber) {
+            scrollPoint = timeline.find('.timeline-pale[data-page="' + pageNum + '"]').offset().top;
+            scrolling = true;
+            if ($('body').hasClass('admin-bar')) {
+                scrollPoint -= 32;
+            }
+
+            $('html, body').animate({
+                    scrollTop: scrollPoint
+                },
+                1000, function() {
+                    $t._binding('bind');
+                    scrolling = false;
+                    $('.timeline-scrubber ul li').removeClass('active');
+                    $('.timeline-scrubber ul li[data-page="' + pageNum + '"]').addClass('active');
+                });
+        }
+        moveByScrubber = false;
     }
 });
 
