@@ -125,70 +125,84 @@
          top: 5px;
       }
    }
+}
 
-   .nav-main {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      z-index: 1;
+.nav-main {
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   z-index: 1;
 
-      .navbar-nav {
+   // Depth 1
+   .navbar-nav {
+      display: inline-block;
+      float: none;
+      padding: 0; 
+      border-top: 1px solid #fff;
+      border-top: 1px solid rgba(255,255,255,.15);
+
+      > li {
          display: inline-block;
          float: none;
-         padding: 0;
-         width: 100%;
-         border-top: 1px solid #fff;
-         border-top: 1px solid rgba(255,255,255,.15);
-
-         > li {
-            display: inline-block;
-            float: none;
-            background: transparent;
-         }
       }
 
-      a {
-         color: #fff;
-         color: rgba(255,255,255,.5);
-      }
-
-      a:hover,
-      a:active {
-         background: none;
-         color: #fff;
-      }
-
-      .open {
-         > a,
-         a:hover,
-         a:focus {
-            background: none;
-            color: #fff;
-         }
-      }
-
-      .active {
+      > .active {
          margin-top: -1px;
          border-top: 1px solid #fff;
 
-         a {
+         > a {
             color: #fff;
          }
       }
+   }
 
-      .dropdown-menu {
-         border: none !important;
+   a {
+      color: #fff;
+      color: rgba(255,255,255,.5);
+   }
+
+   li a:hover,
+   li a:active {
+      background: none;
+      color: #fff;
+   }
+
+   // Depth 2
+   .navbar-nav ul {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+      position: absolute;
+      width: 150px;
+      border-radius: @border-radius-base;
+
+      li {
          background: rgba(255, 255, 255, 0.1);
-         box-shadow: none;
-         text-align: left;
+      }
 
-         a {
-            padding: 5px 15px;
+      li:first-child {
+         border-radius: @border-radius-base;
+      }
+   }
+
+   // Single 
+   .single & {
+      top: 0;
+
+      .navbar-nav {
+         border-top: none;
+         border-bottom: 1px solid #fff;
+         border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+         > .active {
+            margin-top: 0;
+            margin-bottom: -1px;
+            border-top: none;
+            border-bottom: 1px solid #fff;
          }
       }
    }
 }
-
 
 
 /* ==========================================================================
