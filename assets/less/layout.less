@@ -16,26 +16,29 @@
    ========================================================================== */
 
 .banner {
-   background: url(../img/bg.jpg) no-repeat top center fixed;
-   background-size: cover;
    color: #fff;
    position: relative;
    text-align: center;
 
-   &:before {
-      content: "";
-      display: block;
-      top: 0;
-      right: 0;
-      left: 0;
-      bottom: 0;
-      position: absolute;
-      #gradient > .directional(@start-color: #a83279; @end-color: #d38312; @deg: -45deg);
-      .opacity(.8);
+   &.cover {
+      background: url(../img/bg.jpg) no-repeat top center fixed;
+      background-size: cover;
+      min-height: 660px;
+
+      &:before {
+         content: "";
+         display: block;
+         top: 0;
+         right: 0;
+         left: 0;
+         bottom: 0;
+         position: absolute;
+         #gradient > .directional(@start-color: #a83279; @end-color: #d38312; @deg: -45deg);
+         .opacity(.8);
+      }
    }
 
    .container {
-      min-height: 660px;
       position: relative;
    }
 
@@ -49,7 +52,7 @@
          width: 280px;
          height: 280px;
          position: absolute;
-         top: 180px;
+         top: 205px;
          left: 50%;
          margin-left: -140px;
          z-index: 0;
@@ -129,17 +132,17 @@
 
 .nav-main {
    position: absolute;
-   bottom: 0;
+   top: 0;
    width: 100%;
-   z-index: 1;
+   z-index: @zindex-navbar;
+   border-botoom: 1px solid #fff;
+   border-bottom: 1px solid rgba(255,255,255,.15);
 
    // Depth 1
    .navbar-nav {
       display: inline-block;
       float: none;
-      padding: 0; 
-      border-top: 1px solid #fff;
-      border-top: 1px solid rgba(255,255,255,.15);
+      padding: 0;
 
       > li {
          display: inline-block;
@@ -147,8 +150,8 @@
       }
 
       > .active {
-         margin-top: -1px;
-         border-top: 1px solid #fff;
+         margin-bottom: -1px;
+         border-bottom: 1px solid #fff;
 
          > a {
             color: #fff;
@@ -159,10 +162,18 @@
    a {
       color: #fff;
       color: rgba(255,255,255,.5);
+      .transition(.3s);
+   }
+
+   .glyphicon {
+      position: relative;
+      right: -10px;
+      font-size: 12px;
    }
 
    li a:hover,
-   li a:active {
+   li a:active,
+   .active > a {
       background: none;
       color: #fff;
    }
@@ -177,29 +188,77 @@
       border-radius: @border-radius-base;
 
       li {
-         background: rgba(255, 255, 255, 0.1);
+         position: relative;
+         margin-bottom: 5px;
+         background: rgba(255, 255, 255, 0.15);
       }
 
-      li:first-child {
-         border-radius: @border-radius-base;
+      a {
+         padding: 10px 15px;
+         display: block;
+      }
+
+      .has-submenu a {
+         padding-right: 25px;
+      }
+
+      .glyphicon {
+         position: absolute;
+         top: 15px;
+         right: 10px;
       }
    }
 
-   // Single 
-   .single & {
+   .navbar-nav > li > ul > li:first-child {
+      margin-top: 10px;
+   }
+
+   // Depth 3
+   .navbar-nav ul ul {
+      left: 150px;
+      padding-left: 5px;
       top: 0;
 
-      .navbar-nav {
-         border-top: none;
-         border-bottom: 1px solid #fff;
-         border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      ul {
+         left: 145px;
+      }
+   }
 
-         > .active {
-            margin-top: 0;
-            margin-bottom: -1px;
-            border-top: none;
-            border-bottom: 1px solid #fff;
-         }
+   // show / hide sub menu
+   .navbar-nav  ul {
+      clip: rect(0, 0, 0, 0);
+      margin-top: 30px;
+      .opacity(0);
+      .transition( .4s );
+   }
+
+   .navbar-nav li:hover > ul {
+      clip: rect(0, 1500px, 1500px, 0);  
+      margin-top: 0;
+      .opacity(1);
+   }
+   
+   // No Cover
+   .no-cover & {
+      border-bottom-color: #e5e5e5;
+      
+      .active {
+         border-bottom-color: @brand-danger;
+      }
+
+      a {
+         color: #333;
+      }
+
+      a:hover,
+      a:active,
+      .active > a {
+         color: @brand-danger;
+      }
+
+      .navbar-nav ul li {
+         border: 1px solid #e5e5e5;
+         background: #f8f8f8;
       }
    }
 }
