@@ -75,18 +75,27 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
    ========================================================================== */
 .btn {
    outline: none !important;
-   font-size: 10px;
+   font-family: @font-family-base;
+   padding: 9px 29px;
+   font-size: 11px;
+   line-height: 20px;
+   border-width: 0 0 2px;
    text-transform: uppercase;
 }
 
-.btn-link {
-   &:hover,
-   &:focus {
-      text-decoration: none;
-   }
+.btn-lg {
+   padding: 14px 39px;
 }
 
-.btn-coner {
+.btn-sm {
+   padding: 4px 19px;
+}
+
+.btn-xs {
+   padding: 0 9px;
+}
+
+.btn-circle {
    border-radius: 30px;
 }
 
