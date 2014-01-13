@@ -16,7 +16,7 @@
         ?>
         </div>
       </nav>
-      <?php if(is_home() || is_archive()) : ?>
+      <?php if( is_front_page() || is_archive() || is_search() ) : ?>
       <hgroup>
         <div class="container">
           <h1 class="page-title"><?php echo dw_timeline_title(); ?></h1>

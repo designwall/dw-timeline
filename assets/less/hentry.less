@@ -62,23 +62,6 @@
    ========================================================================== */
 
 .single {
-   // .banner .nav-main {
-   //    top: 0;
-
-   //    ul {
-   //       border-top: none;
-   //       border-bottom: 1px solid #fff;
-   //       border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-   //    }
-
-   //    .active {
-   //       margin-top: 0;
-   //       margin-bottom: -1px;
-   //       border-top: none;
-   //       border-bottom: 1px solid #fff;
-   //    }
-   // }
-
    .hentry header {
       position: absolute;
       top: -160px;
@@ -114,6 +97,46 @@
       font-size: @font-size-content;
       line-height: @line-height-content; 
       padding: 0 0 50px;
+   }
+}
+
+/* ==========================================================================
+   404
+   ========================================================================== */
+.error404-html {
+   overflow: hidden;
+   height: 100%;
+}
+
+.error404 {
+   overflow: hidden;
+   #gradient > .directional(@start-color: #1c15a3; @end-color: #5c1f73; @deg: -45deg);
+   
+   .banner {
+      position: absolute;
+      clip: rect(0, 0, 0, 0);
+   }
+
+   .main {
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      color: #fff;
+      font-size: 16px;
+
+      span {
+         .opacity(.7);
+      }
+
+      a {
+         color: #fff;
+      }
+
+      img {
+         margin-bottom: 40px;
+         .center-block();
+      }
    }
 }
 

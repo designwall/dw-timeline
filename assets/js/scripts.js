@@ -39,6 +39,13 @@ function dwtl_layout() {
 
 $(document).ready(function() {
     dwtl_layout();
+
+    if ( $('body').hasClass('error404') ) {
+        $('html').addClass('error404-html');
+
+        var main_height = $('.main').outerHeight();
+        $('.main').css( { 'margin-top': -main_height/2 } );
+    };
 });
 
 $(window).resize(function() {

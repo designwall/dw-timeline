@@ -1,13 +1,6 @@
-<?php get_template_part('templates/page', 'header'); ?>
+<img src="<?php echo get_template_directory_uri() ?>/assets/img/404.png" alt="">
 
-<div class="alert alert-warning">
-  <?php _e('Sorry, but the page you were trying to view does not exist.', 'dw-timeline'); ?>
-</div>
+<span><?php _e('You have found a missing time plot. <br> Back in','dw-timeline'); ?></span>
 
-<p><?php _e('It looks like this was the result of either:', 'dw-timeline'); ?></p>
-<ul>
-  <li><?php _e('a mistyped address', 'dw-timeline'); ?></li>
-  <li><?php _e('an out-of-date link', 'dw-timeline'); ?></li>
-</ul>
+<a href="<?php echo home_url() ?>"><?php _e('','dw-timeline') ?><?php _e('Home','dw-timeline') ?></a>
 
-<?php get_search_form(); ?>
