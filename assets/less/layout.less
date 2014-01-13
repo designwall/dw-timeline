@@ -148,10 +148,12 @@ body.archive {
       display: inline-block;
       float: none;
       padding: 0;
+      font-size: 0;
 
       > li {
          display: inline-block;
          float: none;
+         font-size: @font-size-base;
       }
 
       > .active {
@@ -190,17 +192,26 @@ body.archive {
       text-align: left;
       position: absolute;
       width: 150px;
-      border-radius: @border-radius-base;
-
+      
       li {
          position: relative;
-         margin-bottom: 5px;
-         background: rgba(255, 255, 255, 0.15);
+         background: #fff;
+         margin-top: -1px;
+         border: 1px solid #e5e5e5;
+
+         &:first-child {
+            margin-top: 0;
+         }
       }
 
       a {
          padding: 10px 15px;
          display: block;
+         color: @gray-dark;
+
+         &:hover {
+            color: @brand-danger;
+         }
       }
 
       .has-submenu a {
@@ -216,6 +227,10 @@ body.archive {
 
    .navbar-nav > li > ul > li:first-child {
       margin-top: 10px;
+
+      &:before {
+
+      }
    }
 
    // Depth 3
@@ -248,7 +263,7 @@ body.archive {
       border-bottom-color: #e5e5e5;
       background: #fff;
       
-      .active {
+      .navbar-nav > .active {
          border-bottom-color: @brand-danger;
       }
 
@@ -260,11 +275,6 @@ body.archive {
       a:active,
       .active > a {
          color: @brand-danger;
-      }
-
-      .navbar-nav ul li {
-         border: 1px solid #e5e5e5;
-         background: #fff; 
       }
    }
 }
