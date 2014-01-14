@@ -21,6 +21,9 @@ function dw_timeline_setup() {
 
   // Tell the TinyMCE editor to use a custom stylesheet
   add_editor_style('/assets/css/editor-style.css');
+
+  // This feature enables post and comment RSS feed links to head
+  add_theme_support( 'automatic-feed-links' );
 }
 add_action('after_setup_theme', 'dw_timeline_setup');
 

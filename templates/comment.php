@@ -2,7 +2,7 @@
 <div class="comment-body">
   <div class="comment-header">
     <h4 class="comment-heading"><?php echo get_comment_author_link(); ?></h4>
-    <time datetime="<?php echo comment_date('c'); ?>"><a href="<?php echo htmlspecialchars(get_comment_link($comment->comment_ID)); ?>"><?php printf(__('%1$s', 'dw-timeline'), get_comment_date(),  get_comment_time()); ?></a></time>
+    <time datetime="<?php echo comment_date('c'); ?>"><a href="<?php echo htmlspecialchars(get_comment_link($comment->comment_ID)); ?>"><?php printf(__('%1$s at %2$s', 'dw-timeline'), get_comment_date(),  get_comment_time()); ?></a></time>
   </div>
 
   <div class="comment-content">
@@ -15,6 +15,8 @@
   </div>
 
   <div class="comment-action">
-    <?php comment_reply_link(array_merge(array('reply_text'=> __('<i class="glyphicon glyphicon-share-alt"></i> Reply', 'dw-timeline') ), array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
-    <?php edit_comment_link( __('<i class="glyphicon glyphicon-pencil"></i> edit') ); ?>
+    <?php comment_reply_link(array_merge(
+      array('reply_text'=> sprintf(__('%s Reply', 'dw-timeline'), '<i class="glyphicon glyphicon-share-alt"></i>')), 
+      array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
+    <?php edit_comment_link( sprintf(__('%s edit', 'dw-timeline'), '<i class="glyphicon glyphicon-pencil"></i>') ); ?>
   </div>

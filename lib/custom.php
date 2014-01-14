@@ -23,19 +23,19 @@ function dw_timeline_post_setting_callback( $post ) {
   ?>
     
   <table width="100%">
-    <tr><td><?php _e('<strong>Select Grid</strong>','dw-wallpress') ?></td></tr>
+    <tr><td><strong><?php _e('Select Grid','dw-timeline') ?></strong></td></tr>
     <tr>
       <td width="50%">
         <label>
         <input type="radio" name="dw_timeline_post_grid_setting" value="normal" checked="checked">
-        <span><?php _e('Normal','dw-wallpress') ?></span>
+        <span><?php _e('Normal','dw-timeline') ?></span>
         </label>
       </td>
 
       <td width="50%">
         <label>
         <input type="radio" name="dw_timeline_post_grid_setting" value="full" <?php if ($grid_value == 'full') echo 'checked="checked"'  ?> >
-        <span><?php _e('Full','dw-wallpress') ?></span>
+        <span><?php _e('Full','dw-timeline') ?></span>
         </label>
       </td>
     </tr>

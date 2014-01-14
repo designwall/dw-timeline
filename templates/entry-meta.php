@@ -6,7 +6,8 @@
 		</span>
 	</span>
 	<span class="sep">&bull;</span>
-	<span class="entry-date"><?php echo __('On', 'dw-timeline'); ?> <a href="<?php the_permalink(); ?>"><time class="published" datetime="<?php echo get_the_time('c'); ?>"><?php echo get_the_date(); ?></time></a></span>
+	<span class="entry-date"><?php _e('On', 'dw-timeline'); ?> <a href="<?php the_permalink(); ?>"><time class="published" datetime="<?php echo get_the_time('c'); ?>"><?php echo get_the_date(); ?></time></a></span>
 	<span class="sep">&bull;</span>
-	<span class="cat-links"><?php echo __('In', 'dw-timeline'); ?> <?php echo get_the_category_list( _x( ', ', '', 'dw-timeline' ) ); ?></span>
+	<span class="cat-links"><?php  _e('In', 'dw-timeline'); ?> 
+	<?php echo get_the_category_list( ', ' ); ?></span>
 </div>

@@ -28,7 +28,7 @@ function dw_timeline_title() {
       return single_cat_title('', false);
     }
   } elseif (is_search()) {
-    return sprintf(__('Search Results for <br> %s', 'dw-timeline'), get_search_query());
+    return sprintf(__('Search Results for %s', 'dw-timeline'), get_search_query());
   } elseif (is_404()) {
     return __('Not Found', 'dw-timeline');
   } else {

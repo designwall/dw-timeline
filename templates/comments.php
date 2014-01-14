@@ -5,7 +5,14 @@
 
  if (have_comments()) : ?>
   <section id="comments">
-    <h3><?php printf(_n('One Response to &ldquo;%2$s&rdquo;', '%1$s Responses to &ldquo;%2$s&rdquo;', get_comments_number(), 'dw-timeline'), number_format_i18n(get_comments_number()), get_the_title()); ?></h3>
+    <h3>
+      <?php 
+        printf( _n('One Response to &ldquo; %2$s &rdquo;', '%1$s Responses to &ldquo; %2$s &rdquo;', 
+          get_comments_number(), 'dw-timeline'), 
+          number_format_i18n(get_comments_number()), 
+          get_the_title()); 
+      ?>
+    </h3>
 
     <ol class="comment-list">
       <?php wp_list_comments(array('walker' => new DW_Timeline_Walker_Comment)); ?>
