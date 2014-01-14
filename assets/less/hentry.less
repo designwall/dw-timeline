@@ -33,6 +33,10 @@
 
       a {
          color: #bbb;
+
+         &:hover {
+            color: @brand-danger; 
+         }
       }
 
       .sep {
@@ -62,41 +66,66 @@
    ========================================================================== */
 
 .single {
-   .hentry header {
-      position: absolute;
-      top: -160px;
-      z-index: 1;
-      color: #fff;
-      width: 100%;
-   }
-
-   .entry-title {
-      font-weight: 700;
-      font-size: 48px;
-      position: absolute;
-      bottom: 0;
-      padding-bottom: 50px;
-   }
-
    .entry-meta {
-      color: #fff;
-
-      a {
-         color: #fff;
-      }
-
       .avatar {
          border-radius: 50%;
          margin-right: 5px;
       }
    }
 
-   .entry-content {
-      font-family: @headings-font-family;
-      font-weight: 300;
-      font-size: @font-size-content;
-      line-height: @line-height-content; 
-      padding: 0 0 50px;
+   .no-cover + .wrap {
+      .hentry header {
+         .page-header();
+      }
+
+      .entry-meta {
+         a {
+            color: #999;
+            &:hover {
+               color: @brand-danger;
+            }
+         }
+      }
+   }
+
+   .cover + .wrap {
+      .hentry header {
+         position: absolute;
+         top: -160px;
+         z-index: 1;
+         color: #fff;
+         width: 100%;
+      }
+
+      .entry-title {
+         font-weight: 700;
+         font-size: 48px;
+         position: absolute;
+         bottom: 0;
+         padding-bottom: 50px;
+      }
+
+      .entry-meta {
+         color: #fff;
+         position: relative;
+
+         a {
+            color: #fff;
+
+            &:hover {
+               color: #fff;
+               .opacity(.8);
+            }
+         }
+      }
+
+      .entry-content {
+         font-family: @headings-font-family;
+         font-weight: 300;
+         font-size: @font-size-content;
+         line-height: @line-height-content; 
+         padding: 0 0 50px;
+      }
    }
 }
 
@@ -185,7 +214,10 @@
          a {
             font-size: @font-size-small;
             color: #999;
-            
+
+            &:hover {
+               color: @brand-danger;
+            }
          }
       }
 
@@ -214,6 +246,10 @@
             padding-bottom: 0;
          }
       }
+   }
+
+   .comment-action a {
+      margin-right: 5px;
    }
 }
 

@@ -10,7 +10,7 @@ function dwtl_layout() {
     var dwtl = $('.timeline');
     var dwtl_width = dwtl.outerWidth();
     var dwlt_half = dwtl.find('.dwtl');
-    if (dwtl_width >= 800) {
+    //if (dwtl_width >= 800) {
         dwtl.removeClass('one-col').addClass('two-col');
 
         var left_Col = 0,
@@ -29,12 +29,12 @@ function dwtl_layout() {
                 right_Col = 0;
             }
         });
-    } else {
-        dwtl.removeClass('two-col').addClass('one-col');
-        dwlt_half.each(function(index, el) {
-            $(el).removeClass('dwtl-left dwtl-right');
-        });
-    }
+    // } else {
+    //     dwtl.removeClass('two-col').addClass('one-col');
+    //     dwlt_half.each(function(index, el) {
+    //         $(el).removeClass('dwtl-left dwtl-right');
+    //     });
+    // }
 }
 
 $(document).ready(function() {
