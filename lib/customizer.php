@@ -141,7 +141,16 @@ function dw_timeline_get_theme_option( $option_name, $default = false ) {
 }
 
 /**
- * Custom Headerf
+ * Favicon
+ */
+function dw_timeline_favicon(){
+  $favicon = dw_timeline_get_theme_option('favicon', get_template_directory_uri().'/assets/img/favicon.ico');
+  echo '<link rel="shortcut icon" href="'.$favicon.'">';
+}
+add_action( 'wp_head', 'dw_timeline_favicon' );
+
+/**
+ * Custom Header
  */
 function dw_timeline_custom_header() {
   $header_image = dw_timeline_get_theme_option('header_image');
