@@ -48,18 +48,18 @@
       'author' =>
         '<div class="form-group">' .
         '<label for="author">' . __( 'Name', 'dw-timeline' ) . '</label> ' .
-        '<input placeholder="' . _x( 'Name', 'dw-timeline' ) . '" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
+        '<input placeholder="' . __( 'Name', 'dw-timeline' ) . '" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
         '" class="form-control"' . $aria_req . ' /></div>',
 
       'email' =>
         '<div class="form-group"><label for="email">' . __( 'Email', 'dw-timeline' ) . '</label> ' .
-        '<input placeholder="' . _x( 'Email', 'dw-timeline' ) . '" id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+        '<input placeholder="' . __( 'Email', 'dw-timeline' ) . '" id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
         '" class="form-control"' . $aria_req . ' /></div>',
 
       'url' =>
         '<div class="form-group"><label for="url">' .
         __( 'Website', 'dw-timeline' ) . '</label>' .
-        '<input placeholder="' . _x( 'Website', 'dw-timeline' ) . '" id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
+        '<input placeholder="' . __( 'Website', 'dw-timeline' ) . '" id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
         '" class="form-control" /></div>'
       )
     ),
