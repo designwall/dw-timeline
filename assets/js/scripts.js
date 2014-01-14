@@ -70,28 +70,32 @@ $('.timeline-scrubber ul li').on('click', function(event) {
     var timelineInfinitescroll = $('.timeline').data('infinitescroll');
     var t = $(this);
     var pageNum = t.data('page');
-    if( ! contentLoading && ! moveByScrubber ) {
-        moveByScrubber = true;
-        timelineInfinitescroll._binding('unbind');
-        timelineInfinitescroll.options.state.currPage = parseInt(pageNum) - 1;
-        var scrollPoint = 0;
-        if (loadedPage.indexOf(pageNum) > -1 && timeline.find('.timeline-pale[data-page="' + pageNum + '"]').length > 0) {
-            //Loaded
-            scrollPoint = timeline.find('.timeline-pale[data-page="' + pageNum + '"]').offset().top;
-            if ($('body').hasClass('admin-bar')) {
-                scrollPoint -= 32;
-            }
+    var scrollPoint = 0;
+    if (loadedPage.indexOf(pageNum) > -1 && timeline.find('.timeline-pale[data-page="' + pageNum + '"]').length > 0 ) {
+        if( moveByScrubber == pageNum ) {
+            return false;
+        }
+        moveByScrubber = pageNum;
+        //Loaded
+        scrollPoint = timeline.find('.timeline-pale[data-page="' + pageNum + '"]').offset().top;
+        if ($('body').hasClass('admin-bar')) {
+            scrollPoint -= 32;
+        }
 
-            $('html, body').animate({
-                    scrollTop: scrollPoint
-                },
-                1000, function() {
-                    timelineInfinitescroll._binding('bind');
-                    $('.timeline-scrubber ul li').removeClass('active');
-                    t.addClass('active');
-                    moveByScrubber = false;
-                });
-        } else {
+        $('html, body').animate({
+                scrollTop: scrollPoint
+            },
+            1000, function() {
+                timelineInfinitescroll._binding('bind');
+                $('.timeline-scrubber ul li').removeClass('active');
+                t.addClass('active');
+                moveByScrubber = false;
+            });
+    } else {
+        if( ! contentLoading && ! moveByScrubber ) {
+            moveByScrubber = pageNum;
+            timelineInfinitescroll._binding('unbind');
+            timelineInfinitescroll.options.state.currPage = parseInt(pageNum) - 1;
             var currPage = timelineInfinitescroll.options.state.currPage;
             if (timelineInfinitescroll.options.state.isDone && loadedPage.length < $('.timeline-scrubber ul li').length) {
                 timelineInfinitescroll.options.state.isDone = false;
