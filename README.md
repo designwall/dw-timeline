@@ -20,7 +20,7 @@ Features
  - Microformat: https://www.readability.com/publishers/guidelines
  - Relative URL: http://www.456bereastreet.com/archive/201010/how_to_make_wordpress_urls_root_relative/
  - Nice search (/search/query)
- - Image captions use <figure> and <figcaption>
+ - Image captions use `<figure>` and `<figcaption>`
  - Multilingual ready
 
 Changelog
