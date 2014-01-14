@@ -30,16 +30,22 @@
         ?>
         </div>
       </nav>
-      <?php if( is_front_page() || is_archive() || is_search() ) : ?>
-      <hgroup>
+      <?php if( is_front_page() || is_archive() ) : ?>
+        <hgroup>
+          <div class="container">
+            <h1 class="page-title">
+              <?php echo dw_timeline_title(); ?>
+            </h1>
+            <h2 class="page-description"><?php bloginfo('description'); ?></h2>
+            <button id="get-started" class="btn btn-default btn-coner"><?php echo dw_timeline_get_theme_option('get_start','Get Start Now') ?></button>
+          </div>
+        </hgroup>
+      <?php elseif( is_search() ) : ?>
         <div class="container">
           <h1 class="page-title">
             <?php echo dw_timeline_title(); ?>
           </h1>
-          <h2 class="page-description"><?php bloginfo('description'); ?></h2>
-          <button id="get-started" class="btn btn-default btn-coner"><?php echo dw_timeline_get_theme_option('get_start','Get Start Now') ?></button>
         </div>
-      </hgroup>
       <?php endif; ?>
   </div>
 </header>

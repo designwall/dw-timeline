@@ -168,6 +168,9 @@ function dw_timeline_custom_header() {
     .banner hgroup:after {
       background-color: <?php echo $site_title_backgournd; ?>;
     }
+    .banner #get-started {
+      color: <?php echo $site_title_backgournd; ?>; 
+    }
     <?php } ?>
     </style>    
     <?php
