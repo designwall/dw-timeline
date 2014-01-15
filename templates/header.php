@@ -1,6 +1,6 @@
 <?php  
   $class = 'no-cover';
-  if ( is_front_page() || is_archive() || is_search() ) {
+  if ( is_front_page() || is_archive() || is_search() || is_home() ) {
     $class = 'cover';
   }
 
@@ -30,7 +30,7 @@
         ?>
         </div>
       </nav>
-      <?php if( is_front_page() || is_archive() ) : ?>
+      <?php if( is_front_page() || is_archive() || is_home() ) : ?>
         <hgroup>
           <div class="container">
             <h1 class="page-title">

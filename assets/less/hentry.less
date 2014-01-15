@@ -154,12 +154,27 @@
       color: #fff;
       font-size: 16px;
 
-      span {
-         .opacity(.7);
-      }
-
       a {
          color: #fff;
+         font-weight: bold;
+         position: relative;
+
+         &:before {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            margin-left: 0;
+            width: 0;
+            height: 1px;
+            background: #fff;
+            content: '';
+            .transition( .3s );
+         }
+
+         &:hover:before {
+            width: 100%;
+            margin-left: -50%;
+         }
       }
 
       img {

@@ -55,15 +55,15 @@ function dw_timeline_customize_register( $wp_customize ) {
     'priority' => 50,
   ));
 
-  $wp_customize->add_setting('dw_timeline_theme_options[header_image]', array(
+  $wp_customize->add_setting('dw_timeline_theme_options[header_background_image]', array(
     'default' => get_template_directory_uri().'/assets/img/bg.jpg',
     'capability' => 'edit_theme_options',
     'type' => 'option',
   ));
-  $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'header_image', array(
+  $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'header_background_image', array(
     'label' => __('Header Image', 'dw-timeline'),
     'section' => 'dw_timeline_header_image',
-    'settings' => 'dw_timeline_theme_options[header_image]',
+    'settings' => 'dw_timeline_theme_options[header_background_image]',
   )));
 
   $wp_customize->add_setting('dw_timeline_theme_options[header_mask_start]', array(
@@ -87,7 +87,6 @@ function dw_timeline_customize_register( $wp_customize ) {
     'settings' => 'dw_timeline_theme_options[header_mask_end]',
   )));
 
-  // SITE TITLE BACKGROUND
   $wp_customize->add_setting('dw_timeline_theme_options[site_title_backgournd]', array(
     'default' => '#f2664f',
     'capability' => 'edit_theme_options',
@@ -153,7 +152,7 @@ add_action( 'wp_head', 'dw_timeline_favicon' );
  * Custom Header
  */
 function dw_timeline_custom_header() {
-  $header_image = dw_timeline_get_theme_option('header_image');
+  $header_image = dw_timeline_get_theme_option('header_background_image');
   $header_mask_start = dw_timeline_get_theme_option('header_mask_start');
   $header_mask_end = dw_timeline_get_theme_option('header_mask_end');
   $site_title_backgournd = dw_timeline_get_theme_option('site_title_backgournd');
