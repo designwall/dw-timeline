@@ -56,12 +56,12 @@
         '<div class="form-group">' .
         '<label for="author">' . __( 'Name', 'dw-timeline' ) . '</label> ' .
         '<input placeholder="' . __( 'Name', 'dw-timeline' ) . '" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
-        '" class="form-control"' . $aria_req . ' /></div>',
+        '" class="form-control" /></div>',
 
       'email' =>
         '<div class="form-group"><label for="email">' . __( 'Email', 'dw-timeline' ) . '</label> ' .
         '<input placeholder="' . __( 'Email', 'dw-timeline' ) . '" id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
-        '" class="form-control"' . $aria_req . ' /></div>',
+        '" class="form-control" /></div>',
 
       'url' =>
         '<div class="form-group"><label for="url">' .

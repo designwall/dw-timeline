@@ -25,5 +25,9 @@ Features
 
 Changelog
 --------------
+= 1.0.1 =
+- Fix: Can not set the header image in back-end for the second time.
+- Fix: Lost header when install theme.
+
 = 1.0.0 =
  - Initial release version
