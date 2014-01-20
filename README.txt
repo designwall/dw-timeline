@@ -10,12 +10,12 @@ DW Timeline
 
 Features
 ------------
-- Beautiful Timeline Designe
+- Beautiful Timeline Design
 - Post format Supported: Standard, Gallery, Image, Quote, Status
 - Bootstrap 3.0.3 ready
 - Post grid option by Metabox
 - Customize: Header image & background, call to action button
-- Write less code with Theme Wrappers: http://scribu.net/wordpress/theme-wrappers.html
+- Clean code using Theme Wrappers: http://scribu.net/wordpress/theme-wrappers.html
 - HTML5 Boilerplate: http://html5boilerplate.com/
 - Microformat: https://www.readability.com/publishers/guidelines
 - Relative URL: http://www.456bereastreet.com/archive/201010/how_to_make_wordpress_urls_root_relative/
