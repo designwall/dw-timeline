@@ -37,6 +37,9 @@ Changelog
 --------------
 = 1.0.1 =
 - Fix: Post titles and content containing very long words, overflow their container.
+- Tweak: Use the WordPress friendly README.txt instead of README.md
+- Tweak: Use the WordPress friendly LICENSE.txt instead of LICENSE
+- Tweak: State License details about all the bundled resources.
 
 = 1.0.0 =
 - Initial release version
