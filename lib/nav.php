@@ -53,7 +53,7 @@ function dw_timeline_nav_menu_css_class($classes, $item) {
 
   $classes = array_unique($classes);
 
-  return array_filter($classes, 'is_element_empty');
+  return array_filter($classes, 'dw_timeline_is_element_empty');
 }
 add_filter('nav_menu_css_class', 'dw_timeline_nav_menu_css_class', 10, 2);
 add_filter('nav_menu_item_id', '__return_null');
@@ -78,3 +78,8 @@ function dw_timeline_nav_menu_args($args = '') {
   return array_merge($args, $dw_timeline_nav_menu_args);
 }
 add_filter('wp_nav_menu_args', 'dw_timeline_nav_menu_args');
+
+function dw_timeline_is_element_empty($element) {
+  $element = trim($element);
+  return empty($element) ? false : true;
+}

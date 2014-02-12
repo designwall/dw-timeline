@@ -2,10 +2,7 @@
 /**
  * Enable theme features
  */
-add_theme_support('relative-urls');         // Enable relative URLs
 add_theme_support('bootstrap-gallery');     // Enable Bootstrap's thumbnails component on [gallery]
-add_theme_support('nice-search');           // Enable /?s= to /search/ redirect
-add_theme_support('jquery-cdn');            // Enable to load jQuery from the Google CDN
 
 /**
  * Configuration values
