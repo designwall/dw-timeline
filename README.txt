@@ -35,6 +35,12 @@ Please post your questions in Questions & Answers page - http://www.designwall.c
 
 Changelog
 --------------
+= 1.0.2 =
+- Tweak: Remove cleanup.php, utils.php, relative-urls.php
+- Tweak: Remove Nice search
+- Tweak: Remove jQuery CDN is Plugin territory
+- Tweak: Remove hard-coded RSS feed link from document head
+
 = 1.0.1 =
 - Fix: Post titles and content containing very long words, overflow their container.
 - Tweak: Use the WordPress friendly README.txt instead of README.md
