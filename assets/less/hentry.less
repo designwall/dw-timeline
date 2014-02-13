@@ -58,6 +58,22 @@
       clear: both;
       margin: 10px 0 0;
    }
+
+   .entry-tags {
+      margin-bottom: 10px;
+
+      .tags-title {
+      }
+
+      a {
+         margin: 15px 0 30px;
+         opacity: .5;
+
+         &:hover {
+            opacity: 1;
+         }
+      }
+   }
 }
 
 
@@ -71,6 +87,13 @@
          border-radius: 50%;
          margin-right: 5px;
       }
+   }
+
+   .entry-content {
+      font-family: @headings-font-family;
+      font-weight: 300;
+      font-size: @font-size-content;
+      line-height: @line-height-content; 
    }
 
    .no-cover + .wrap {
@@ -117,14 +140,6 @@
                .opacity(.8);
             }
          }
-      }
-
-      .entry-content {
-         font-family: @headings-font-family;
-         font-weight: 300;
-         font-size: @font-size-content;
-         line-height: @line-height-content; 
-         padding: 0 0 50px;
       }
    }
 }
