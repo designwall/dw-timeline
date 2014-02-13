@@ -25,6 +25,7 @@ Features
 
  Resources
 -----------------
+- Infinite Scroll - https://github.com/paulirish/infinite-scroll/blob/master/jquery.infinitescroll.js
 - Roots - https://github.com/roots/roots/blob/master/LICENSE.md
 - Bootstrap 3.0.3 - http://getbootstrap.com/getting-started/#license-faqs
 - Modernizr 2.6.2 - http://modernizr.com/license/
