@@ -36,6 +36,9 @@ Please post your questions in Questions & Answers page - http://www.designwall.c
 
 Changelog
 --------------
+= 1.0.3 =
+- Fixed: Bug on image dummy.
+
 = 1.0.2 =
 - Tweak: Remove cleanup.php, utils.php, relative-urls.php
 - Tweak: Remove Nice search

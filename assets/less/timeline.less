@@ -100,6 +100,8 @@
 .timeline .dwtl {
    position: relative;
    z-index: 1;
+   opacity: 0;
+   .transition( opacity .3s );
    
    &:before {
       position: absolute;
@@ -223,7 +225,7 @@
    bottom: 28px;
    text-align: center;
    width: 100%;
-   display: inline-block;
+   display: inline-block !important;
    background: #fff;
    width: 120px;
    left: 50%;
@@ -237,6 +239,7 @@
    color: #bbb;
    font-weight: 500;
    border-radius: @border-radius-small;
+   .opacity(1) !important;
 }
 
 .post-nav {

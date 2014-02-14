@@ -10,31 +10,25 @@ jQuery(function($){
         var dwtl = $('.timeline');
         var dwtl_width = dwtl.outerWidth();
         var dwlt_half = dwtl.find('.dwtl');
-        //if (dwtl_width >= 800) {
             dwtl.removeClass('one-col').addClass('two-col');
 
-            var left_Col = 0,
-                right_Col = 0;
-            dwlt_half.each(function(index, el) {
-                if ($(el).hasClass('normal')) {
-                    if (left_Col <= right_Col) {
-                        $(el).removeClass('dwtl-right').addClass('dwtl-left');
-                        left_Col += $(el).outerHeight();
-                    } else {
-                        $(el).removeClass('dwtl-left').addClass('dwtl-right');
-                        right_Col += $(el).outerHeight();
-                    }
-                } else if ($(el).hasClass('full')) {
-                    left_Col = 0;
-                    right_Col = 0;
+        var left_Col = 0,
+            right_Col = 0;
+        dwlt_half.each(function(index, el) {
+            if ($(el).hasClass('normal')) {
+                if (left_Col <= right_Col) {
+                    $(el).removeClass('dwtl-right').addClass('dwtl-left');
+                    left_Col += $(el).outerHeight();
+                } else {
+                    $(el).removeClass('dwtl-left').addClass('dwtl-right');
+                    right_Col += $(el).outerHeight();
                 }
-            });
-        // } else {
-        //     dwtl.removeClass('two-col').addClass('one-col');
-        //     dwlt_half.each(function(index, el) {
-        //         $(el).removeClass('dwtl-left dwtl-right');
-        //     });
-        // }
+            } else if ($(el).hasClass('full')) {
+                left_Col = 0;
+                right_Col = 0;
+            }
+        });
+        $('.dwtl').css({'opacity':1});
     }
 
     $(document).ready(function() {
