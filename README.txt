@@ -19,7 +19,6 @@ Features
 - HTML5 Boilerplate: http://html5boilerplate.com/
 - Microformat: https://www.readability.com/publishers/guidelines
 - Relative URL: http://www.456bereastreet.com/archive/201010/how_to_make_wordpress_urls_root_relative/
-- Nice search (/search/query)
 - Image captions use `<figure>` and `<figcaption>`
 - Multilingual ready
 
@@ -28,7 +27,8 @@ Features
 - Infinite Scroll - https://github.com/paulirish/infinite-scroll/blob/master/jquery.infinitescroll.js
 - Roots - https://github.com/roots/roots/blob/master/LICENSE.md
 - Bootstrap 3.0.3 - http://getbootstrap.com/getting-started/#license-faqs
-- Modernizr 2.6.2 - http://modernizr.com/license/
+- Modernizr 2.6.2- http://modernizr.com/license/
+- GLYPHICONS in Twitter Bootstrap: http://glyphicons.com/license/
 
 Technical Support
 ------------------------
@@ -36,6 +36,12 @@ Please post your questions in Questions & Answers page - http://www.designwall.c
 
 Changelog
 --------------
+= 1.0.4 =
+- Tweak: Static pages support comments
+- Tweak: Use excerpt_length filter rather than POST_EXCERPT_LENGTH 
+- Tweak: Favicon must be disabled by default. If user does not configure a favicon, no default may be displayed
+- Tweak: Remove bundled jQuery
+
 = 1.0.3 =
 - Fixed: Bug on image dummy.
 

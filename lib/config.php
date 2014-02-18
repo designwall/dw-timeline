@@ -7,7 +7,10 @@ add_theme_support('bootstrap-gallery');     // Enable Bootstrap's thumbnails com
 /**
  * Configuration values
  */
-define('POST_EXCERPT_LENGTH', 40); // Length in words for excerpt_length filter (http://codex.wordpress.org/Plugin_API/Filter_Reference/excerpt_length)
+function dw_timelinecustom_excerpt_length( $length ) {
+	return 40;
+}
+add_filter( 'excerpt_length', 'dw_timelinecustom_excerpt_length', 999 );
 
 /**
  * .main classes

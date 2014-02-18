@@ -39,7 +39,7 @@ function dw_timeline_customize_register( $wp_customize ) {
 
   // FAVICON 
   $wp_customize->add_setting('dw_timeline_theme_options[favicon]', array(
-    'default' => get_template_directory_uri().'/assets/img/favicon.ico',
+    'default' => '',
     'capability' => 'edit_theme_options',
     'type' => 'option',
   ));
@@ -50,8 +50,8 @@ function dw_timeline_customize_register( $wp_customize ) {
   )));
 
   // CUSTOM HEADER
-  $wp_customize->add_section('dw_timeline_header_image', array(
-    'title'    => __('Custom Header', 'dw-timeline'),
+  $wp_customize->add_section('dw_timeline_cover_image', array(
+    'title'    => __('Cover image', 'dw-timeline'),
     'priority' => 50,
   ));
 
@@ -62,7 +62,7 @@ function dw_timeline_customize_register( $wp_customize ) {
   ));
   $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'header_background_image', array(
     'label' => __('Header Image', 'dw-timeline'),
-    'section' => 'dw_timeline_header_image',
+    'section' => 'dw_timeline_cover_image',
     'settings' => 'dw_timeline_theme_options[header_background_image]',
   )));
 
@@ -73,7 +73,7 @@ function dw_timeline_customize_register( $wp_customize ) {
   ));
   $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'header_mask_start', array(
     'label' => __('Header mask', 'dw-timeline'),
-    'section' => 'dw_timeline_header_image',
+    'section' => 'dw_timeline_cover_image',
     'settings' => 'dw_timeline_theme_options[header_mask_start]',
   )));
 
@@ -83,7 +83,7 @@ function dw_timeline_customize_register( $wp_customize ) {
     'type' => 'option',
   ));
   $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'header_mask_end', array(
-    'section' => 'dw_timeline_header_image',
+    'section' => 'dw_timeline_cover_image',
     'settings' => 'dw_timeline_theme_options[header_mask_end]',
   )));
 
@@ -94,7 +94,7 @@ function dw_timeline_customize_register( $wp_customize ) {
   ));
   $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'site_title_backgournd', array(
     'label' => __('Site title background', 'dw-timeline'),
-    'section' => 'dw_timeline_header_image',
+    'section' => 'dw_timeline_cover_image',
     'settings' => 'dw_timeline_theme_options[site_title_backgournd]',
   )));
 
@@ -143,8 +143,10 @@ function dw_timeline_get_theme_option( $option_name, $default = false ) {
  * Favicon
  */
 function dw_timeline_favicon(){
-  $favicon = dw_timeline_get_theme_option('favicon', get_template_directory_uri().'/assets/img/favicon.ico');
-  echo '<link rel="shortcut icon" href="'.$favicon.'">';
+  $favicon = dw_timeline_get_theme_option('favicon');
+  if ($favicon) {
+    echo '<link rel="shortcut icon" href="'.$favicon.'">';
+  }
 }
 add_action( 'wp_head', 'dw_timeline_favicon' );
 
