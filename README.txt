@@ -38,8 +38,8 @@ Changelog
 --------------
 = 1.0.4 =
 - Tweak: Static pages support comments
-- Tweak: Use excerpt_length filter rather than POST_EXCERPT_LENGTH 
-- Tweak: Favicon must be disabled by default. If user does not configure a favicon, no default may be displayed
+- Tweak: Use excerpt_length filter instead of POST_EXCERPT_LENGTH 
+- Tweak: Favicon disabled by default.
 - Tweak: Remove bundled jQuery
 
 = 1.0.3 =
