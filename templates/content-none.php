@@ -4,7 +4,7 @@
       <h2 class="entry-title"><?php _e( 'Nothing Found', 'dw-timeline' ); ?></h2>
     </header>
     <div class="entry-content">
-      <p><?php _e( 'Apologies, but no results were found. Perhaps searching will help find a related post.', 'twentytwelve' ); ?></p>
+      <p><?php _e( 'Apologies, but no results were found. Perhaps searching will help find a related post.', 'dw-timeline' ); ?></p>
 			<?php get_search_form(); ?>
     </div>
   </div>

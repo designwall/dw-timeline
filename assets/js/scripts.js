@@ -114,7 +114,7 @@ jQuery(function($){
                     opts.loading.msg.fadeOut(opts.loading.speed);
                 }
             },
-            finishedMsg: "The End",
+            finishedMsg: infinitescroll.the_end,
             img: dwtl.template_directory_uri + "/assets/img/loading.gif",
             msgText: '',
             start: function() {
@@ -149,11 +149,11 @@ jQuery(function($){
 
             $t._debug('contentSelector', $(opts.contentSelector)[0]);
             var max = Math.max.apply(null, loadedPage);
-            var separate = $('<div data-page="' + opts.state.currPage + '" class="timeline-pale dwtl full"><span> Page ' + opts.state.currPage + ' </span></div>');
+            var separate = $('<div data-page="' + opts.state.currPage + '" class="timeline-pale dwtl full"><span>' + infinitescroll.page + ' ' + opts.state.currPage + ' </span></div>');
             var pageNum = opts.state.currPage;
             
             if (opts.state.currPage >= max) {
-                var separate = $('<div data-page="' + opts.state.currPage + '" class="timeline-pale dwtl full"><span> Page ' + opts.state.currPage + ' </span></div>');
+                var separate = $('<div data-page="' + opts.state.currPage + '" class="timeline-pale dwtl full"><span>' + infinitescroll.page + ' ' + opts.state.currPage + ' </span></div>');
                 $(opts.contentSelector).append(separate);
                 $(opts.contentSelector).append(elems);
             } else {

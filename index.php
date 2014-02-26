@@ -1,5 +1,5 @@
 <div class="timeline two-col">
-  <div data-page="1" class="timeline-pale dwtl full"><span>Page 1</span></div>
+  <div data-page="1" class="timeline-pale dwtl full"><span><?php _e('Page 1','dw-timeline') ?></span></div>
   <?php if ( have_posts() ): ?>
     <?php  
       $pages = $wp_query->max_num_pages;
