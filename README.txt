@@ -36,6 +36,11 @@ Please post your questions in Questions & Answers page - http://www.designwall.c
 
 Changelog
 --------------
+= 1.0.5 =
+- Tweak: Replace wp_register_script with wp_enqueue_script;
+- Tweak: Replace <meta charset="utf-8"> with <meta charset="<?php bloginfo( 'charset' ); ?>">
+- Fix: Translation ready
+
 = 1.0.4 =
 - Tweak: Static pages support comments
 - Tweak: Use excerpt_length filter instead of POST_EXCERPT_LENGTH 
