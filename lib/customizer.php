@@ -140,6 +140,32 @@ function dw_timeline_get_theme_option( $option_name, $default = false ) {
 }
 
 /**
+ * Header code
+ */
+if( ! function_exists('header_code') ) {
+  function header_code(){
+    $header_code = dw_timeline_get_theme_option('header_code');
+    if ($header_code) {
+      echo $header_code;
+    }
+  }
+  add_action( 'wp_head', 'header_code' );
+}
+
+/**
+ * Footer code
+ */
+if( ! function_exists('footer_code') ) {
+  function footer_code(){
+    $footer_code = dw_timeline_get_theme_option('footer_code');
+    if ($footer_code) {
+      echo $footer_code;
+    }
+  }
+  add_action( 'wp_footer', 'footer_code' );
+}
+
+/**
  * Favicon
  */
 function dw_timeline_favicon(){
