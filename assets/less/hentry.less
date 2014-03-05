@@ -47,6 +47,7 @@
    .entry-content,
    .entry-summary {
       padding: 0 0 20px;
+      .clearfix();
 
       .carousel {
          margin: 0 0 10px;
@@ -74,6 +75,10 @@
          }
       }
    }
+}
+
+.addthis_toolbox {
+   display: none;
 }
 
 
@@ -141,6 +146,25 @@
             }
          }
       }
+   }
+
+   // Add this
+   .entry-content .addthis_toolbox {
+      display: block;
+      margin-top: 30px;
+      margin-bottom: 0;
+      text-align: center;
+   }
+
+   .addthis_default_style .at300b,
+   .addthis_default_style .at300m,
+   .addthis_default_style .addthis_counter {
+      float: none;
+      display: inline-block;
+   }
+
+   .addthis_default_style .addthis_counter .addthis_button_expanded {
+      display: table;
    }
 }
 

@@ -36,6 +36,13 @@ Please post your questions in Questions & Answers page - http://www.designwall.c
 
 Changelog
 --------------
+= 1.0.7 =
+- Fix: missing the site title in homepage
+- Fix: minor bugs in style
+
+= 1.0.6 =
+- Fix: Minor bugs in Customize panel
+
 = 1.0.5 =
 - Tweak: Replace wp_register_script with wp_enqueue_script;
 - Tweak: Replace <meta charset="utf-8"> with <meta charset="<?php bloginfo( 'charset' ); ?>">
