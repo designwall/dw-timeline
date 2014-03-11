@@ -36,6 +36,9 @@ Please post your questions in Questions & Answers page - http://www.designwall.c
 
 Changelog
 --------------
+= 1.0.8 =
+- Fix: Duplicate posts.
+
 = 1.0.7 =
 - Fix: missing the site title in homepage
 - Fix: minor bugs in style

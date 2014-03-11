@@ -99,3 +99,13 @@ function dw_timeline_grid_class($classes) {
     return $classes;
 }
 add_filter('post_class', 'dw_timeline_grid_class');
+
+// Ignore Sticky post
+function dw_timeline_prepare_posts($query){
+  if ( $query->is_home() && $query->is_main_query() ) {
+    $query->set( 'ignore_sticky_posts', true );
+    $sticky = get_option( 'sticky_posts' );
+    $query->set( 'post__not_in', $sticky );
+  }
+}
+add_action( 'pre_get_posts', 'dw_timeline_prepare_posts' );
