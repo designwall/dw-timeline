@@ -4,6 +4,14 @@ jQuery(function($){
     var moveByScrubber = false;
     var loadedPage = [1];
 
+    // Nivo lightbox
+    // -------------------------------------
+    function nivoLightbox() {
+        if (dwtl.gallery_lightbox != 'disable') {
+            $('.gallery .thumbnail').nivoLightbox();
+        };
+    }
+
     // Timeline layout
     // -------------------------------------
     function dwtl_layout() {
@@ -31,8 +39,11 @@ jQuery(function($){
         $('.dwtl').css({'opacity':1});
     }
 
+    // Ready
+    // -------------------------------------
     $(document).ready(function() {
         dwtl_layout();
+        nivoLightbox();
 
         if ( $('body').hasClass('error404') ) {
             $('html').addClass('error404-html');
@@ -170,6 +181,7 @@ jQuery(function($){
                 opts.state.currPage = max;
             }
             dwtl_layout();
+            nivoLightbox();
             elems.fadeIn('slow');
 
                 scrollPoint = timeline.find('.timeline-pale[data-page="' + pageNum + '"]').offset().top;

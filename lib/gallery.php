@@ -86,6 +86,9 @@ function dw_timeline_gallery($attr) {
   $i = 0;
   foreach ($attachments as $id => $attachment) {
     $image = ('file' == $link) ? wp_get_attachment_link($id, $size, false, false) : wp_get_attachment_link($id, $size, true, false);
+    $image = str_replace('<a', '<a title="'. wptexturize($attachment->post_excerpt) .'"', $image);
+    $image = str_replace('<a', '<a data-lightbox-gallery="'. $post->ID .'"', $image);
+    
     $output .= ($i % $columns == 0) ? '<div class="row gallery-row">': '';
     $output .= '<div class="' . $grid .'">' . $image;
 

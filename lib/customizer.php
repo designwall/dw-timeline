@@ -98,6 +98,48 @@ function dw_timeline_customize_register( $wp_customize ) {
     'settings' => 'dw_timeline_theme_options[site_title_backgournd]',
   )));
 
+  // FONT SELECTOR
+  // -------------------------------------------
+  $wp_customize->add_section('dw_timeline_font_selector', array(
+    'title'    => __('Font Selector', 'dw-timeline'),
+    'priority' => 50,
+  ));
+
+  $fonts = dw_timeline_get_gfonts();
+  $newarray = array();
+  $newarray[] = '';
+  foreach ($fonts as $index => $font) {
+    foreach ($font->files as $key => $value) {
+      $newarray[$font->family . ':dw:' . $value ] = $font->family . ' - ' . $key;
+    }
+  }
+
+  $wp_customize->add_setting('dw_timeline_theme_options[heading_font]', array(
+    'default'        => '',
+    'capability'     => 'edit_theme_options',
+    'type'           => 'option',
+  ));
+  $wp_customize->add_control( 'heading_font', array(
+    'settings' => 'dw_timeline_theme_options[heading_font]',
+    'label'   => __('Headding font', 'dw-timeline'),
+    'section' => 'dw_timeline_font_selector',
+    'type'    => 'select',
+    'choices'    => $newarray
+  ));
+
+  $wp_customize->add_setting('dw_timeline_theme_options[body_font]', array(
+    'default'        => '',
+    'capability'     => 'edit_theme_options',
+    'type'           => 'option',
+  ));
+  $wp_customize->add_control( 'body_font', array(
+    'settings' => 'dw_timeline_theme_options[body_font]',
+    'label'   => __('Content font', 'dw-timeline'),
+    'section' => 'dw_timeline_font_selector',
+    'type'    => 'select',
+    'choices'    => $newarray
+  ));
+
   // CUSTOM CODE 
   $wp_customize->add_section('dw_timeline_custom_code', array(
     'title'    => __('Custom Code', 'dw-timeline'),
@@ -137,6 +179,18 @@ function dw_timeline_get_theme_option( $option_name, $default = false ) {
     return $options[$option_name];
   }
   return $default; 
+}
+
+/**
+ *  Get google fonts
+ */
+
+if( ! function_exists('dw_timeline_get_gfonts') ) {
+  function dw_timeline_get_gfonts(){
+    $fontsSeraliazed = wp_remote_fopen( get_template_directory_uri() . '/lib/font/gfonts_v2.txt' );
+    $fontArray = unserialize( $fontsSeraliazed );
+    return $fontArray->items;
+  }
 }
 
 /**
@@ -199,7 +253,7 @@ function dw_timeline_custom_header() {
       background-image: linear-gradient(-45deg, <?php echo $header_mask_start ?>, <?php echo $header_mask_end ?>);
     }
     <?php } ?>
-
+    
     <?php if ( $site_title_backgournd ) { ?>
     .banner hgroup:after {
       background-color: <?php echo $site_title_backgournd; ?>;
@@ -208,9 +262,51 @@ function dw_timeline_custom_header() {
       color: <?php echo $site_title_backgournd; ?>; 
     }
     <?php } ?>
+
+    <?php if ($site_title_backgournd == '') { ?>
+      .banner hgroup:after {
+        background: none;
+      }   
+    <?php } ?>
+
     </style>    
     <?php
 }
 add_action( 'wp_head', 'dw_timeline_custom_header' );
 
-
+/**
+ * Font Selector
+ */
+if( ! function_exists('dw_timeline_typo_font') ) {
+  function dw_timeline_typo_font(){
+    if (dw_timeline_get_theme_option('heading_font') && dw_timeline_get_theme_option('heading_font') != '') {
+      $heading_font = explode(':dw:', dw_timeline_get_theme_option('heading_font') );
+      ?>
+        <style type="text/css" id="heading_font" media="screen">
+          @font-face {
+            font-family: "<?php echo $heading_font[0] ?>";
+            src: url('<?php echo $heading_font[1] ?>');
+          } 
+          h1,h2,h3,h4,h5,h6, blockquote {
+            font-family: "<?php echo $heading_font[0] ?>" !important;
+          }
+        </style>
+      <?php
+    }
+    if (dw_timeline_get_theme_option( 'body_font') && dw_timeline_get_theme_option( 'body_font') != '') {
+      $body_font = explode( ':dw:', dw_timeline_get_theme_option( 'body_font' ));
+      ?>
+        <style type="text/css" id="body_font" media="screen">
+          @font-face {
+            font-family: "<?php echo $body_font[0] ?>";
+            src: url('<?php echo $body_font[1] ?>');
+          } 
+          body, .entry-content, blockquote cite{
+            font-family: "<?php echo $body_font[0] ?>" !important;
+          }
+        </style>
+      <?php
+    }
+  }
+  add_filter('wp_head','dw_timeline_typo_font');
+}
