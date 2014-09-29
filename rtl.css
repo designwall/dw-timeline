@@ -1,0 +1,35 @@
+/*
+Author: Behrang Yarahmadi
+Description: Minor MOD for a better view in RTL version.
+September 2014
+*/
+/* Font for Persian and Arabic  from Google*/
+@import url(http://fonts.googleapis.com/earlyaccess/notonaskharabic.css);
+body, p {
+	font-family: Tahoma;
+}
+.banner .page-title, .banner .page-description, h1, h2, h3, #respond > h3, blockquote p {
+	font-family: 'Noto Naskh Arabic', Tahoma;
+}
+
+/* a fix for Navigation bar icon */
+.nav-main .glyphicon {
+	left: -10px !important;
+	right: auto;
+}
+/* Scrubber fix */
+.timeline-scrubber {
+	margin-right: -105px;
+	margin-left: auto;
+}
+.timeline-scrubber a {
+	padding: 5px 15px 5px 0;
+	border-left: none;
+	border-right: 3px solid #e5e5e5;
+}
+.timeline-scrubber a:hover {
+	border-right-color: #e74c3c;
+}
+.timeline-scrubber .active a {
+	border-right-color: #e74c3c;
+}
