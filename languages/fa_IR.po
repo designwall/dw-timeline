@@ -1,0 +1,262 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: DW Timeline\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-09-29 01:01+0330\n"
+"PO-Revision-Date: 2014-09-29 01:20+0330\n"
+"Last-Translator: Behrang Yarahmadi\n"
+"Language-Team: DesignWall <webmaster@designwall.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: persian\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:3
+#, php-format
+msgid "You have found a missing time plot. %1$s Back in %2$s Home %3$s"
+msgstr "شما به یک زمان از دست رفته برخورده‌اید! %1$s بازگشت به %2$s خانه %3$s"
+
+#: ../index.php:2
+msgid "Page 1"
+msgstr "برگه 1"
+
+#: ../index.php:15
+msgid "Page"
+msgstr "برگه"
+
+#: ../index.php:28
+msgid "&larr; Older posts"
+msgstr "&larr; نوشته‌های قدیمی‌تر"
+
+#: ../index.php:29
+msgid "Newer posts &rarr;"
+msgstr "نوشته‌های جدیدتر &rarr;"
+
+#: ../lib/custom.php:24
+msgid "Post Settings"
+msgstr "تنظیمات نوشتن"
+
+#: ../lib/custom.php:40
+msgid "Select Grid"
+msgstr "Grid مورد نظرتان را انتخاب کنید"
+
+#: ../lib/custom.php:45
+msgid "Normal"
+msgstr "معمولی"
+
+#: ../lib/custom.php:52
+msgid "Full"
+msgstr "کامل"
+
+#: ../lib/customizer.php:10
+msgid "Default"
+msgstr "پیش‌فرض"
+
+#: ../lib/customizer.php:35
+msgid "Get Start Button"
+msgstr "دکمه‌ی شروع"
+
+#: ../lib/customizer.php:47
+msgid "Site Favicon"
+msgstr "Favicon سایت"
+
+#: ../lib/customizer.php:54
+msgid "Cover image"
+msgstr "عکس کاور"
+
+#: ../lib/customizer.php:64
+msgid "Header Image"
+msgstr "عکس سربرگ"
+
+#: ../lib/customizer.php:75
+msgid "Header mask"
+msgstr "ماسک سربرگ"
+
+#: ../lib/customizer.php:96
+msgid "Site title background"
+msgstr "پس‌زمینه‌ی عنوان سایت"
+
+#: ../lib/customizer.php:104
+msgid "Font Selector"
+msgstr "انتخاب‌گر قلم"
+
+#: ../lib/customizer.php:124
+msgid "Headding font"
+msgstr "قلم عنوان‌ها"
+
+#: ../lib/customizer.php:137
+msgid "Content font"
+msgstr "قلم محتوا"
+
+#: ../lib/customizer.php:145
+msgid "Custom Code"
+msgstr "کد دلخواه"
+
+#: ../lib/customizer.php:155
+msgid "Header Code (Meta tags, CSS, etc ...)"
+msgstr "کد سربرگ (برچسب‌های متا، سی‌اس‌اس، و عیره...)"
+
+#: ../lib/customizer.php:166
+msgid "Footer Code (Analytics, etc ...)"
+msgstr "کد پانوشت (گوگل آنالایتیک و غیره)"
+
+#: ../lib/init.php:11
+msgid "Primary Navigation"
+msgstr "فهرست اصلی"
+
+#: ../lib/scripts.php:24
+msgid "page"
+msgstr "برگه"
+
+#: ../lib/scripts.php:25
+msgid "the end"
+msgstr "پایان"
+
+#: ../lib/titles.php:19
+#, php-format
+msgid "Daily Archives: %s"
+msgstr "بایگانی روزانه: %s"
+
+#: ../lib/titles.php:21
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr "بایگانی ماهانه: %s"
+
+#: ../lib/titles.php:23
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr "بایگانی سالانه: %s"
+
+#: ../lib/titles.php:26
+#, php-format
+msgid "Author Archives: %s"
+msgstr "بایگانی نویسنده‌گان: %s"
+
+#: ../lib/titles.php:31
+#, php-format
+msgid "Search Results for %s"
+msgstr "نتایج جستجو برای %s"
+
+#: ../lib/titles.php:33
+msgid "Not Found"
+msgstr "پیدا نشد"
+
+#: ../templates/comment.php:5
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s در %2$s"
+
+#: ../templates/comment.php:11
+msgid "Your comment is awaiting moderation."
+msgstr "دیدگاه شما پس از بررسی نمایش داده‌خواهد‌شد."
+
+#: ../templates/comment.php:19
+#, php-format
+msgid "%s Reply"
+msgstr "%s پاسخ"
+
+#: ../templates/comment.php:21
+#, php-format
+msgid "%s edit"
+msgstr "%s ویرایش"
+
+#: ../templates/comments.php:10
+#, php-format
+msgid "One Response to &ldquo; %2$s &rdquo;"
+msgid_plural "%1$s Responses to &ldquo; %2$s &rdquo;"
+msgstr[0] "یک پاسخ به &ldquo; %2$s &rdquo;"
+msgstr[1] "%1$s پاسخ به &ldquo; %2$s &rdquo;"
+
+#: ../templates/comments.php:25
+msgid "&larr; Older comments"
+msgstr "&larr; نظرات قدیمی‌تر"
+
+#: ../templates/comments.php:28
+msgid "Newer comments &rarr;"
+msgstr "نظرات جدیدتر &rarr;"
+
+#: ../templates/comments.php:36
+#: ../templates/comments.php:45
+msgid "Comments are closed."
+msgstr "بخش دیدگاه‌ها برای این نوشته بسته‌شده‌است."
+
+#: ../templates/comments.php:57
+#: ../templates/comments.php:58
+msgid "Name"
+msgstr "نام"
+
+#: ../templates/comments.php:62
+#: ../templates/comments.php:63
+msgid "Email"
+msgstr "ایمیل"
+
+#: ../templates/comments.php:68
+#: ../templates/comments.php:69
+msgid "Website"
+msgstr "وب‌سایت"
+
+#: ../templates/comments.php:73
+msgid "Comment"
+msgstr "دیگاه"
+
+#: ../templates/comments.php:73
+msgid "Write your comment"
+msgstr "نظرتان را بنویسید"
+
+#: ../templates/content-none.php:4
+msgid "Nothing Found"
+msgstr "نوشته‌ای پیدا نشد"
+
+#: ../templates/content-none.php:7
+msgid "Apologies, but no results were found. Perhaps searching will help find a related post."
+msgstr "با عرض پوزش، اما نتیجه‌ای پیدا نشد. شاید جستجو به پافتن نوشته‌های مرتبط کمک کند."
+
+#: ../templates/content-single.php:9
+msgid "Pages:"
+msgstr "برگه‌ها:"
+
+#: ../templates/content-single.php:13
+msgid ", "
+msgstr "،"
+
+#: ../templates/content-single.php:17
+msgid "Tags: "
+msgstr "برچسب‌ها"
+
+#: ../templates/content-single.php:19
+#, php-format
+msgid "%1$s"
+msgstr "%1$s"
+
+#: ../templates/content.php:14
+msgid "Continue Reading &rarr;"
+msgstr "ادامه را بخوانید &rarr;"
+
+#: ../templates/entry-meta.php:5
+msgid "By"
+msgstr "به نگارش"
+
+#: ../templates/entry-meta.php:9
+msgid "On"
+msgstr "در تاریخ"
+
+#: ../templates/entry-meta.php:11
+msgid "In"
+msgstr "در"
+
+#: ../templates/searchform.php:3
+#: ../templates/searchform.php:6
+msgid "Search"
+msgstr "جستجو"
+
+#: ../templates/searchform.php:4
+msgid "Search for:"
+msgstr "جستجو برای"
+
+#~ msgid "Continued"
+#~ msgstr "ادامه"
